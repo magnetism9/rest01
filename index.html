@@ -9,6 +9,61 @@
   <link rel="icon" type="image/png" href="images/favicon.png" />
   <link rel="apple-touch-icon" href="images/favicon.png" />
 
+  <!-- ====== JSON-LD 구조화 데이터 (검색엔진 · Google 리치 결과) ====== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "구자성",
+    "alternateName": "Gu Ja Seong",
+    "jobTitle": "소방안전관리 전문가",
+    "email": "Magentsim99@naver.com",
+    "birthDate": "2001-05-13",
+    "url": "https://magnetism9.github.io/rest01/",
+    "image": "https://magnetism9.github.io/rest01/images/profile.jpg",
+    "alumniOf": [
+      {
+        "@type": "EducationalOrganization",
+        "name": "경북전문대학교",
+        "department": "소방안전관리과",
+        "startDate": "2020-03",
+        "endDate": "2024-02"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "한국펫고등학교",
+        "department": "경영서비스과",
+        "startDate": "2017-03",
+        "endDate": "2020-02"
+      }
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "운전면허자격 1종보통",
+        "credentialCategory": "license",
+        "recognizedBy": { "@type": "Organization", "name": "경북지방경찰청" },
+        "dateCreated": "2019-10-07"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "SMAT 서비스경영자격 3급",
+        "credentialCategory": "certificate",
+        "recognizedBy": { "@type": "Organization", "name": "한국생산성본부" },
+        "dateCreated": "2018-12-05"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "ATC 캐드마스터 2급",
+        "credentialCategory": "certificate",
+        "recognizedBy": { "@type": "Organization", "name": "한국ATC센터" },
+        "dateCreated": "2018-11-14"
+      }
+    ],
+    "knowsAbout": ["소방안전관리", "CAD 설계", "서비스경영", "자동차 운전"]
+  }
+  </script>
+
   <!-- ====== Open Graph (카카오톡 / SNS 공유) ====== -->
   <meta property="og:url"         content="https://magnetism9.github.io/rest01/" />
   <meta property="og:type"        content="website" />
@@ -281,8 +336,12 @@
     </button>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+          integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt"
+          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"
+          integrity="sha384-lgP6SKZeYZwy7E1FNW3+rGRX/lkJF6ipUUkyET+ZdEhxkLidIF0aewQq2LZaOJ2x"
+          crossorigin="anonymous"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

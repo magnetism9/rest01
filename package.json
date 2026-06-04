@@ -8,9 +8,7 @@
     "gen:images": "node scripts/generate-images.js"
   },
   "devDependencies": {
+    "@napi-rs/canvas": "^1.0.0",
     "live-server": "^1.2.2"
-  },
-  "dependencies": {
-    "@napi-rs/canvas": "^1.0.0"
   }
 }
