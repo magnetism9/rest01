@@ -1,0 +1,12 @@
+{
+  "name": "rest01-resume",
+  "version": "1.0.0",
+  "description": "Personal Resume Website",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=index.html",
+    "start": "live-server --port=3000"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

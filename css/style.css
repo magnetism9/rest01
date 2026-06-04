@@ -1,0 +1,299 @@
+/* ========== RESET & BASE ========== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary:   #1e3a5f;   /* 네이비 — 소방전기 분야 전문성 느낌 */
+  --accent:    #e85d26;   /* 오렌지-레드 — 소방 포인트 */
+  --bg:        #f4f6f9;
+  --surface:   #ffffff;
+  --text:      #2c2c2c;
+  --muted:     #6b7280;
+  --border:    #e2e8f0;
+  --radius:    12px;
+  --shadow:    0 4px 24px rgba(0,0,0,.08);
+  --font:      'Noto Sans KR', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* ========== HERO ========== */
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #2d5a8e 100%);
+  color: #fff;
+  padding: 64px 24px 56px;
+}
+
+.hero__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.hero__photo-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hero__photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255,255,255,.35);
+  box-shadow: 0 8px 32px rgba(0,0,0,.25);
+  display: block;
+}
+
+.hero__photo-placeholder {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.15);
+  border: 4px solid rgba(255,255,255,.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff;
+  position: absolute;
+  top: 0; left: 0;
+}
+
+/* 사진이 정상 로드되면 placeholder 숨김 */
+.hero__photo:not([style*="display:none"]) + .hero__photo-placeholder {
+  display: none;
+}
+
+.hero__name {
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.hero__title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 10px;
+  background: rgba(232,93,38,.15);
+  display: inline-block;
+  padding: 3px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(232,93,38,.4);
+}
+
+.hero__subtitle {
+  font-size: .95rem;
+  opacity: .85;
+  margin-bottom: 20px;
+}
+
+.hero__contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: .88rem;
+  opacity: .9;
+}
+
+/* ========== LAYOUT ========== */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+.section {
+  margin-top: 60px;
+  animation: fadeUp .5s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.section__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  border-left: 4px solid var(--accent);
+  padding-left: 14px;
+  margin-bottom: 28px;
+}
+
+/* ========== ABOUT ========== */
+.about__text {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  line-height: 1.9;
+  color: #444;
+}
+
+/* ========== SKILLS GRID ========== */
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.skill-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border-top: 3px solid var(--accent);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(0,0,0,.12);
+}
+
+.skill-card__icon { font-size: 1.7rem; display: block; margin-bottom: 8px; }
+.skill-card__label { font-size: .88rem; font-weight: 500; }
+
+/* ========== TIMELINE ========== */
+.timeline { position: relative; padding-left: 28px; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline__item {
+  position: relative;
+  margin-bottom: 36px;
+}
+
+.timeline__dot {
+  position: absolute;
+  left: -24px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--surface);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.timeline__content {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  box-shadow: var(--shadow);
+}
+
+.timeline__period {
+  font-size: .8rem;
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: .5px;
+}
+
+.timeline__company {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 6px 0 2px;
+}
+
+.timeline__role {
+  font-size: .9rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.timeline__detail {
+  padding-left: 18px;
+  font-size: .88rem;
+  color: #555;
+}
+
+.timeline__detail li { margin-bottom: 4px; }
+
+/* ========== PROJECTS ========== */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  border-bottom: 3px solid var(--primary);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(0,0,0,.12);
+}
+
+.project-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.project-card__desc {
+  font-size: .88rem;
+  color: #555;
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
+
+.project-card__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.tag {
+  font-size: .75rem;
+  background: var(--bg);
+  color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-weight: 500;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  text-align: center;
+  padding: 28px;
+  font-size: .82rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 600px) {
+  .hero__inner { flex-direction: column; gap: 24px; text-align: center; }
+  .hero__contacts { justify-content: center; }
+  .hero__name { font-size: 2rem; }
+  .skills__grid { grid-template-columns: repeat(2, 1fr); }
+}
