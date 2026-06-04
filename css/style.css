@@ -37,6 +37,24 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
 }
 
+/* MotionPath SVG 데코 */
+.hero__svg-deco {
+  position: absolute;
+  right: -6%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46%;
+  max-width: 420px;
+  opacity: .55;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#svg-stage {
+  width: 100%;
+  overflow: visible;
+}
+
 /* 파티클 캔버스 */
 #heroCanvas {
   position: absolute;

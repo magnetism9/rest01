@@ -122,7 +122,24 @@ function animateParticles() {
 animateParticles();
 
 /* =========================================
-   5. 섹션 스크롤 진입 애니메이션
+   5. GSAP MotionPath — rect가 path 위를 순환
+   ========================================= */
+gsap.registerPlugin(MotionPathPlugin);
+
+gsap.to('#motion-rect', {
+  motionPath: {
+    path: '#motion-path',
+    align: '#motion-path',
+    alignOrigin: [0.5, 0.5],
+    autoRotate: true,
+  },
+  duration: 20,
+  ease: 'none',
+  repeat: -1,
+});
+
+/* =========================================
+   7. 섹션 스크롤 진입 애니메이션
    ========================================= */
 const sections = document.querySelectorAll('.section');
 const sectionObserver = new IntersectionObserver((entries) => {
