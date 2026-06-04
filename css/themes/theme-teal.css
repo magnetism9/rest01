@@ -1,0 +1,82 @@
+/* ════════════════════════════════════
+   THEME : 다크틸 / 민트시안
+   ════════════════════════════════════ */
+
+/* ── Light ── */
+:root {
+  --c-bg:          #f0fafa;
+  --c-surface:     #ffffff;
+  --c-surface-2:   #e2f6f6;
+  --c-primary:     #0a2e2e;
+  --c-primary-2:   #184848;
+  --c-primary-3:   #061e1e;
+  --c-primary-50:  rgba(10,46,46,.5);
+  --c-accent:      #00b8ac;
+  --c-accent-rgb:  0,184,172;
+  --c-accent-2:    #00d4c8;
+  --c-accent-text: #001e1c;
+  --c-text:        #0a1e1e;
+  --c-text-inv:    #e8ffff;
+  --c-muted:       #4a7a7a;
+  --c-border:      #c0e8e4;
+  --c-shadow:      rgba(10,46,46,.12);
+}
+/* ── Dark (system) ── */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-mode="light"]) {
+    --c-bg:        #020e0e;
+    --c-surface:   #0a2020;
+    --c-surface-2: #123030;
+    --c-primary:   #184848;
+    --c-primary-2: #205858;
+    --c-primary-3: #103838;
+    --c-primary-50:rgba(24,72,72,.5);
+    --c-accent:    #00d4c8;
+    --c-accent-rgb:0,212,200;
+    --c-accent-2:  #1ae8dc;
+    --c-accent-text:#001e1c;
+    --c-text:      #e0ffff;
+    --c-text-inv:  #e0ffff;
+    --c-muted:     #6ab8b4;
+    --c-border:    #1a3838;
+    --c-shadow:    rgba(0,0,0,.45);
+  }
+}
+/* ── Dark (manual) ── */
+[data-mode="dark"] {
+  --c-bg:        #020e0e;
+  --c-surface:   #0a2020;
+  --c-surface-2: #123030;
+  --c-primary:   #184848;
+  --c-primary-2: #205858;
+  --c-primary-3: #103838;
+  --c-primary-50:rgba(24,72,72,.5);
+  --c-accent:    #00d4c8;
+  --c-accent-rgb:0,212,200;
+  --c-accent-2:  #1ae8dc;
+  --c-accent-text:#001e1c;
+  --c-text:      #e0ffff;
+  --c-text-inv:  #e0ffff;
+  --c-muted:     #6ab8b4;
+  --c-border:    #1a3838;
+  --c-shadow:    rgba(0,0,0,.45);
+}
+/* ── Light (manual) ── */
+[data-mode="light"] {
+  --c-bg:          #f0fafa;
+  --c-surface:     #ffffff;
+  --c-surface-2:   #e2f6f6;
+  --c-primary:     #0a2e2e;
+  --c-primary-2:   #184848;
+  --c-primary-3:   #061e1e;
+  --c-primary-50:  rgba(10,46,46,.5);
+  --c-accent:      #00b8ac;
+  --c-accent-rgb:  0,184,172;
+  --c-accent-2:    #00d4c8;
+  --c-accent-text: #001e1c;
+  --c-text:        #0a1e1e;
+  --c-text-inv:    #e8ffff;
+  --c-muted:       #4a7a7a;
+  --c-border:      #c0e8e4;
+  --c-shadow:      rgba(10,46,46,.12);
+}

@@ -1,0 +1,70 @@
+/* ════════════════════════════════════
+   THEME : 다크퍼플 / 옐로우  (기본)
+   ════════════════════════════════════ */
+
+/* ── Light ── */
+:root {
+  --c-bg:          #f5f0fa;
+  --c-surface:     #ffffff;
+  --c-surface-2:   #ede5f8;
+  --c-primary:     #3d1a5e;
+  --c-primary-2:   #5a2d7a;
+  --c-primary-3:   #2a0e48;
+  --c-primary-50:  rgba(61,26,94,.5);
+  --c-accent:      #f0c000;
+  --c-accent-rgb:  240,192,0;
+  --c-accent-2:    #ffd84d;
+  --c-accent-text: #1a0e00;
+  --c-text:        #1a0d2e;
+  --c-text-inv:    #f5f0fa;
+  --c-muted:       #7a6b8a;
+  --c-border:      #ddd0ee;
+  --c-shadow:      rgba(61,26,94,.12);
+}
+/* ── Dark (system) ── */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-mode="light"]) {
+    --c-bg:        #0d0618;
+    --c-surface:   #1a0d2e;
+    --c-surface-2: #261040;
+    --c-primary:   #4a2070;
+    --c-primary-2: #5a2d80;
+    --c-primary-3: #3a1660;
+    --c-primary-50:rgba(74,32,112,.5);
+    --c-text:      #f0e8ff;
+    --c-text-inv:  #f0e8ff;
+    --c-muted:     #b09ac0;
+    --c-border:    #3d2a50;
+    --c-shadow:    rgba(0,0,0,.45);
+  }
+}
+/* ── Dark (manual) ── */
+[data-mode="dark"] {
+  --c-bg:        #0d0618;
+  --c-surface:   #1a0d2e;
+  --c-surface-2: #261040;
+  --c-primary:   #4a2070;
+  --c-primary-2: #5a2d80;
+  --c-primary-3: #3a1660;
+  --c-primary-50:rgba(74,32,112,.5);
+  --c-text:      #f0e8ff;
+  --c-text-inv:  #f0e8ff;
+  --c-muted:     #b09ac0;
+  --c-border:    #3d2a50;
+  --c-shadow:    rgba(0,0,0,.45);
+}
+/* ── Light (manual) ── */
+[data-mode="light"] {
+  --c-bg:          #f5f0fa;
+  --c-surface:     #ffffff;
+  --c-surface-2:   #ede5f8;
+  --c-primary:     #3d1a5e;
+  --c-primary-2:   #5a2d7a;
+  --c-primary-3:   #2a0e48;
+  --c-primary-50:  rgba(61,26,94,.5);
+  --c-text:        #1a0d2e;
+  --c-text-inv:    #f5f0fa;
+  --c-muted:       #7a6b8a;
+  --c-border:      #ddd0ee;
+  --c-shadow:      rgba(61,26,94,.12);
+}

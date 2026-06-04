@@ -1,4 +1,76 @@
 /* =========================================
+   0. 테마 & 다크모드 — 최우선 실행
+   ========================================= */
+(function () {
+  const themeLink  = document.getElementById('theme-css');
+  const darkToggle = document.getElementById('darkToggle');
+  const palToggle  = document.getElementById('palToggle');
+  const palPanel   = document.getElementById('palPanel');
+  const swatches   = document.querySelectorAll('.swatch');
+
+  /* ── 저장된 설정 불러오기 ── */
+  const savedTheme = localStorage.getItem('resume-theme') || 'purple';
+  const savedMode  = localStorage.getItem('resume-mode')  || 'auto';
+
+  /* ── 테마 적용 ── */
+  function applyTheme(name) {
+    themeLink.href = `css/themes/theme-${name}.css`;
+    swatches.forEach(s => s.classList.toggle('active', s.dataset.theme === name));
+    localStorage.setItem('resume-theme', name);
+  }
+
+  /* ── 다크모드 적용 ── */
+  function applyMode(mode) {
+    const html = document.documentElement;
+    if (mode === 'dark')  { html.setAttribute('data-mode', 'dark');  darkToggle.textContent = '☀️'; }
+    else if (mode === 'light') { html.setAttribute('data-mode', 'light'); darkToggle.textContent = '🌙'; }
+    else                  { html.removeAttribute('data-mode');          darkToggle.textContent = '🌙'; }
+    localStorage.setItem('resume-mode', mode);
+  }
+
+  applyTheme(savedTheme);
+  applyMode(savedMode);
+
+  /* ── 팔레트 토글 ── */
+  palToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = palPanel.classList.toggle('open');
+    palToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  /* ── 스와치 클릭 ── */
+  swatches.forEach(swatch => {
+    swatch.addEventListener('click', () => {
+      applyTheme(swatch.dataset.theme);
+      palPanel.classList.remove('open');
+      palToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* ── 다크모드 토글 ── */
+  darkToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-mode');
+    applyMode(current === 'dark' ? 'light' : 'dark');
+  });
+
+  /* ── 패널 외부 클릭 시 닫기 ── */
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#palWidget')) {
+      palPanel.classList.remove('open');
+      palToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  /* ── ESC 키로 패널 닫기 ── */
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      palPanel.classList.remove('open');
+      palToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+
+/* =========================================
    1. 프로필 사진 fallback
    ========================================= */
 const img = document.getElementById('profileImg');

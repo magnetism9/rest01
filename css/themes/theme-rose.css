@@ -1,0 +1,82 @@
+/* ════════════════════════════════════
+   THEME : 다크로즈 / 코랄핑크
+   ════════════════════════════════════ */
+
+/* ── Light ── */
+:root {
+  --c-bg:          #fff0f4;
+  --c-surface:     #ffffff;
+  --c-surface-2:   #ffe4ec;
+  --c-primary:     #3d0d1a;
+  --c-primary-2:   #5c1828;
+  --c-primary-3:   #2a0610;
+  --c-primary-50:  rgba(61,13,26,.5);
+  --c-accent:      #e83860;
+  --c-accent-rgb:  232,56,96;
+  --c-accent-2:    #ff6b8a;
+  --c-accent-text: #ffffff;
+  --c-text:        #1e080e;
+  --c-text-inv:    #fff0f4;
+  --c-muted:       #8a5a68;
+  --c-border:      #f0d0da;
+  --c-shadow:      rgba(61,13,26,.12);
+}
+/* ── Dark (system) ── */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-mode="light"]) {
+    --c-bg:        #0e0508;
+    --c-surface:   #1e0d12;
+    --c-surface-2: #2e1520;
+    --c-primary:   #5c1828;
+    --c-primary-2: #6e2035;
+    --c-primary-3: #48101e;
+    --c-primary-50:rgba(92,24,40,.5);
+    --c-accent:    #ff6b8a;
+    --c-accent-rgb:255,107,138;
+    --c-accent-2:  #ff8fa8;
+    --c-accent-text:#1e0008;
+    --c-text:      #ffe8ee;
+    --c-text-inv:  #ffe8ee;
+    --c-muted:     #cc8a9a;
+    --c-border:    #3d1a24;
+    --c-shadow:    rgba(0,0,0,.45);
+  }
+}
+/* ── Dark (manual) ── */
+[data-mode="dark"] {
+  --c-bg:        #0e0508;
+  --c-surface:   #1e0d12;
+  --c-surface-2: #2e1520;
+  --c-primary:   #5c1828;
+  --c-primary-2: #6e2035;
+  --c-primary-3: #48101e;
+  --c-primary-50:rgba(92,24,40,.5);
+  --c-accent:    #ff6b8a;
+  --c-accent-rgb:255,107,138;
+  --c-accent-2:  #ff8fa8;
+  --c-accent-text:#1e0008;
+  --c-text:      #ffe8ee;
+  --c-text-inv:  #ffe8ee;
+  --c-muted:     #cc8a9a;
+  --c-border:    #3d1a24;
+  --c-shadow:    rgba(0,0,0,.45);
+}
+/* ── Light (manual) ── */
+[data-mode="light"] {
+  --c-bg:          #fff0f4;
+  --c-surface:     #ffffff;
+  --c-surface-2:   #ffe4ec;
+  --c-primary:     #3d0d1a;
+  --c-primary-2:   #5c1828;
+  --c-primary-3:   #2a0610;
+  --c-primary-50:  rgba(61,13,26,.5);
+  --c-accent:      #e83860;
+  --c-accent-rgb:  232,56,96;
+  --c-accent-2:    #ff6b8a;
+  --c-accent-text: #ffffff;
+  --c-text:        #1e080e;
+  --c-text-inv:    #fff0f4;
+  --c-muted:       #8a5a68;
+  --c-border:      #f0d0da;
+  --c-shadow:      rgba(61,13,26,.12);
+}
