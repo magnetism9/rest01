@@ -4,9 +4,13 @@
   "description": "Personal Resume Website",
   "scripts": {
     "dev": "live-server --port=3000 --open=index.html",
-    "start": "live-server --port=3000"
+    "start": "live-server --port=3000",
+    "gen:images": "node scripts/generate-images.js"
   },
   "devDependencies": {
     "live-server": "^1.2.2"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^1.0.0"
   }
 }
